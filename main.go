@@ -8,6 +8,7 @@ import (
 )
 
 func main() {
+	//write func that recive a slice of channels int and listen all channels to send first recived value from any channel to output. output is channel int.
 	fmt.Println("Hello, 世界")
 	//create channels slice - example
 	channels := []chan int{
@@ -44,6 +45,7 @@ func main() {
 	}()
 
 	//send immidiatly first recived number
+	//to make slice listen need to rewrite to reflection .
 	for range 6 {
 		select {
 		case msg1 := <-channels[0]:
